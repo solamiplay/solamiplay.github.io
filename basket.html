@@ -67,12 +67,48 @@
         margin: 4px;   
         cursor: pointer;  
     } 
-    #del {
-        width: 31px;
-        height: 23px;    
+    .x:hover {
+        color: #ffffff;
+        background-color: #3c3c3c;
     }
-    .cls-1 {
-        fill: #aaa;
+    .x:active {
+        color: #de8600;
+        background-color: #ffc11e;
+    }
+    .y {
+        width: 76px;
+        height: 76px;
+        font-size: 31px;
+        font-weight: 700;
+        color: #aaaaaa;        
+        border-radius: 6px; 
+        border: none;
+        background-color: #2a2a2a; 
+        margin: 4px;   
+        cursor: pointer;  
+        #del {
+        width: 31px;
+        height: 23px;  
+            .col1 {
+            fill: #aaa;
+            }         
+        }
+    } 
+    .y:hover {
+        background-color: #3c3c3c;
+        #del {
+            .col1 {
+            fill: #ffffff;
+            }         
+        }        
+    }
+    .y:active {
+        background-color: #ffc11e;
+        #del {
+            .col1 {
+            fill: #de8600;
+            }         
+        }          
     }    
     .get-code {
         width: 245px;
@@ -86,6 +122,14 @@
         margin: 23px 0px 0px 69px;
         cursor: pointer;     
     }
+    .get-code:hover {
+        color: #000000;        
+        background-color: #00bac5;
+    }
+    .get-code:active {
+        color: #de8600;
+        background-color: #ffc11e;
+    }
 </style>
 </head>
 <body>
@@ -98,7 +142,7 @@
 <div id="input-container">
 <button class="x">1</button><button class="x">2</button><button class="x">3</button><button class="x">4</button><button class="x">5
 </button><button class="x">6</button><button class="x">7</button><button class="x">8</button><button class="x">9</button><button class="x">.</button><button class="x">0
-</button><button class="x"><svg id="del" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.53 22"><path class="cls-1" d="M29.53,2V20c0,1.1-.9,2-2,2H8.55c-.64,0-1.24-.31-1.62-.82L.38,12.18c-.51-.7-.51-1.65,0-2.35L6.93,.82c.38-.52,.98-.82,1.62-.82H27.53c1.1,0,2,.9,2,2Zm-9.88,9l4.65-4.65c.59-.58,.59-1.54,0-2.12-.59-.59-1.53-.59-2.12,0l-4.65,4.65-4.65-4.65c-.59-.59-1.53-.59-2.12,0-.59,.58-.59,1.54,0,2.12l4.65,4.65-4.65,4.65c-.59,.59-.59,1.53,0,2.12,.29,.29,.68,.44,1.06,.44s.77-.15,1.06-.44l4.65-4.65,4.65,4.65c.29,.29,.68,.44,1.06,.44s.77-.15,1.06-.44c.59-.59,.59-1.53,0-2.12l-4.65-4.65Z"/></svg></button>
+</button><button class="y"><svg id="del" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.53 22"><path class="col1" d="M29.53,2V20c0,1.1-.9,2-2,2H8.55c-.64,0-1.24-.31-1.62-.82L.38,12.18c-.51-.7-.51-1.65,0-2.35L6.93,.82c.38-.52,.98-.82,1.62-.82H27.53c1.1,0,2,.9,2,2Zm-9.88,9l4.65-4.65c.59-.58,.59-1.54,0-2.12-.59-.59-1.53-.59-2.12,0l-4.65,4.65-4.65-4.65c-.59-.59-1.53-.59-2.12,0-.59,.58-.59,1.54,0,2.12l4.65,4.65-4.65,4.65c-.59,.59-.59,1.53,0,2.12,.29,.29,.68,.44,1.06,.44s.77-.15,1.06-.44l4.65-4.65,4.65,4.65c.29,.29,.68,.44,1.06,.44s.77-.15,1.06-.44c.59-.59,.59-1.53,0-2.12l-4.65-4.65Z"/></svg></button>
 </div>
 <button class="get-code">Payment Code</button>
 
