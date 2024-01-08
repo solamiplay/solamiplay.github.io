@@ -22,7 +22,6 @@
         position: relative;
         top: 0px;
         overflow: hidden;
-        /* background-color: black; */
     }
     p {
         font-size: 31px;
@@ -157,21 +156,44 @@ $(document).ready(function() {
 $("button").click(function() {
 
     var btn = $(this).val();
- 
-        if ( amount === "0" ) {
-            amount = btn;
-            $(".amount").html(amount);
-        } else {
-            if ( amount.indexOf(",")<=0 && amount.indexOf(".")<=0 && amount.length === 3 ) {
-                amount = [amount.slice(0, 1), ",", amount.slice(1)].join(''); 
-                amount += btn;
-            } else {   
-                amount += btn;    
-            }
-            $(".amount").html(amount);
-        } 
-    
-   
+
+    if ( btn!="q" ) {
+       if ( amount.indexOf(".")<0 && amount.length<3 && btn!="d" && btn!="." ) {    
+           if ( amount==="0" ) {
+               amount = btn;
+               $(".amount").html(amount);
+           } else {
+               amount += btn;
+               $(".amount").html(amount);
+           } 
+       } 
+
+       if ( btn==="." && amount.indexOf(".")<0 ) {
+           if (amount==="0") {
+               amount = "0.";
+               $(".amount").html(amount);
+           } else {    
+               amount += btn;
+               $(".amount").html(amount);
+           }
+       }  
+
+       if ( amount.indexOf(".")>0 && amount.split(".").pop().length<=1 && btn!="d" && btn!="." ) {
+           amount += btn;
+           $(".amount").html(amount);
+       }  
+
+       if ( btn==="d" ) {
+           if (amount.length===1) {
+               amount = "0";
+               $(".amount").html(amount);
+           } else {    
+               amount = amount.slice(0, -1);
+               $(".amount").html(amount);
+           }
+       }
+    }         
+
 });
 });
 </script>
