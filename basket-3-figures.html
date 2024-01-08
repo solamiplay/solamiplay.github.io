@@ -130,6 +130,33 @@
         color: #de8600;
         background-color: #ffc11e;
     }
+    #qr-code {
+        width: 350px;
+        height: 350px;   
+        border-radius: 12px; 
+        background-color: white; 
+        margin: 178px 0px 0px 15px;             
+    }
+    .restart {
+        width: 245px;
+        height: 60px;
+        font-size: 25px;
+        font-weight: 700;
+        color: #2f0d1c;     
+        border-radius: 6px; 
+        border: none;
+        background-color: #ec5f9e; 
+        margin: 23px 0px 0px 69px;
+        cursor: pointer;     
+    }  
+    .restart:hover {
+        color: #000000;        
+        background-color: #00bac5;
+    }
+    .restart:active {
+        color: #de8600;
+        background-color: #ffc11e;
+    }      
 </style>
 </head>
 <body>
@@ -146,18 +173,23 @@
 </div>
 <button class="get-code" value="q">Payment Code</button>
 
+<div id="qr-code"></div>
+<button class="restart" value="r">Restart</button>
+
 </div>
 
 <script>
 
 var amount = "0";
+var key = "8HD7zqj1uiYZEUspigezhXS5t6KPndpmzRmJTX4fFpoT";
+var request = "";
 
 $(document).ready(function() {    
 $("button").click(function() {
 
     var btn = $(this).val();
 
-    if ( btn!="q" ) {
+    if ( btn!="q" && btn!="r" ) {
        if ( amount.indexOf(".")<0 && amount.length<3 && btn!="d" && btn!="." ) {    
            if ( amount==="0" ) {
                amount = btn;
@@ -193,6 +225,17 @@ $("button").click(function() {
            }
        }
     }         
+
+    if ( btn==="q" && parseFloat(amount)>0 ) {
+        request = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
+        alert(request);
+    }
+
+    if ( btn==="r" ) {
+        amount = "0";
+        $(".amount").html(amount);
+        alert("success");
+    }
 
 });
 });
