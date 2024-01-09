@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>basket-3f-js</title>
+<title>basket-3f-js-qr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
@@ -157,6 +157,7 @@
         background-color: #ffc11e;
     }      
 </style>
+<script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
 <body>
     
@@ -221,12 +222,12 @@ world.addEventListener('click', (event) => {
     } 
     if ( c==="q" && parseFloat(amount)>0 ) {
         request = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
-        alert(request);
+
     }    
     if ( c==="r" ) {
         amount = "0";
         updateN(amount);
-        alert("restart");
+
     }
     c = "";
 })
