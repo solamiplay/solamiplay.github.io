@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 <style>
     body {
         margin: 0;
@@ -173,7 +174,7 @@
 </div>
 <button class="get-code" value="q">Payment Code</button>
 
-<div id="qr-code"></div>
+<div id="qr-code"><div id="canvas"></div></div>
 <button class="restart" value="r">Restart</button>
 
 </div>
@@ -228,6 +229,7 @@ $("button").click(function() {
 
     if ( btn==="q" && parseFloat(amount)>0 ) {
         request = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
+
     }
 
     if ( btn==="r" ) {
@@ -237,6 +239,95 @@ $("button").click(function() {
 
 });
 });
+</script>
+
+<script type="text/javascript">
+
+    const qrCode = new QRCodeStyling({
+        "width":350,
+        "height":350,
+        //"data":"https://www.example.com",
+        //"data":"solana:8HD7zqj1uiYZEUspigezhXS5t6KPndpmzRmJTX4fFpoT?amount=0.1&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr",
+        "data":request,
+        "margin":0,
+        "qrOptions":{
+            "typeNumber":"0",
+            "mode":"Byte",
+            "errorCorrectionLevel":"Q"
+        },
+        "imageOptions":{
+            "hideBackgroundDots":false,
+            "imageSize":0.4,"margin":0
+        },
+        "dotsOptions":{
+            "type":"extra-rounded",
+            "color":"#000000"
+        },
+        "backgroundOptions":{
+            "color":"#ffffff"
+        },
+        "image":null,
+        "dotsOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#6a1a4c",
+                "color2":"#6a1a4c",
+                "rotation":"0"
+            }
+        },
+        "cornersSquareOptions":{
+            "type":"extra-rounded",
+            "color":"#000000"
+        },
+        "cornersSquareOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#000000",
+                "color2":"#000000",
+                "rotation":"0"
+            }
+        },
+        "cornersDotOptions":{
+            "type":"",
+            "color":"#000000"
+        },
+        "cornersDotOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#000000",
+                "color2":"#000000",
+                "rotation":"0"
+            }
+        },
+        "backgroundOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#ffffff",
+                "color2":"#ffffff",
+                "rotation":"0"
+            }
+        }});
+        qrCode.append(document.getElementById("canvas"));
 </script>
 
 </body>
