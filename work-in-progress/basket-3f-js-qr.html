@@ -21,7 +21,7 @@
         position: relative;
         top: 0px;
         overflow: hidden;
-    }
+    }   
     p {
         font-size: 31px;
         font-weight: 700;
@@ -173,7 +173,7 @@
 </div>
 <button class="get-code" onclick="c='q'">Payment Code</button>
 
-<div id="qr-code"></div>
+<div id="qr-code"><div id="canvas"></div></div>
 <button class="restart" onclick="c='r'">Restart</button>
 
 </div>
@@ -183,11 +183,94 @@
 var c = "";
 var amount = "0";
 var key = "8HD7zqj1uiYZEUspigezhXS5t6KPndpmzRmJTX4fFpoT";
-var request = "";
+var tx = "";
 const world = document.getElementById('world');
 function updateN(x) {
     document.getElementById("amount").innerHTML=x;
 }
+const qrCode = new QRCodeStyling({
+        "width":350,
+        "height":350,
+        "data":tx,
+        "margin":0,
+        "qrOptions":{
+            "typeNumber":"0",
+            "mode":"Byte",
+            "errorCorrectionLevel":"Q"
+        },
+        "imageOptions":{
+            "hideBackgroundDots":false,
+            "imageSize":0.4,"margin":0
+        },
+        "dotsOptions":{
+            "type":"extra-rounded",
+            "color":"#000000"
+        },
+        "backgroundOptions":{
+            "color":"#ffffff"
+        },
+        "image":null,
+        "dotsOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#6a1a4c",
+                "color2":"#6a1a4c",
+                "rotation":"0"
+            }
+        },
+        "cornersSquareOptions":{
+            "type":"extra-rounded",
+            "color":"#000000"
+        },
+        "cornersSquareOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#000000",
+                "color2":"#000000",
+                "rotation":"0"
+            }
+        },
+        "cornersDotOptions":{
+            "type":"",
+            "color":"#000000"
+        },
+        "cornersDotOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#000000",
+                "color2":"#000000",
+                "rotation":"0"
+            }
+        },
+        "backgroundOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#ffffff",
+                "color2":"#ffffff",
+                "rotation":"0"
+            }
+        }});      
+qrCode.append(document.getElementById("canvas"));
 
 world.addEventListener('click', (event) => {
     if ( c!="q" && c!="r" ) {
@@ -221,13 +304,180 @@ world.addEventListener('click', (event) => {
        }
     } 
     if ( c==="q" && parseFloat(amount)>0 ) {
-        request = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
+        tx = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
+        qrCode.update({ 
+            "width":350,
+            "height":350,
+            "data":tx,
+            "margin":0,
+            "qrOptions":{
+                "typeNumber":"0",
+                "mode":"Byte",
+                "errorCorrectionLevel":"Q"
+            },
+            "imageOptions":{
+                "hideBackgroundDots":false,
+                "imageSize":0.4,"margin":0
+            },
+            "dotsOptions":{
+                "type":"extra-rounded",
+                "color":"#000000"
+            },
+            "backgroundOptions":{
+                "color":"#ffffff"
+            },
+            "image":null,
+            "dotsOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#6a1a4c",
+                    "color2":"#6a1a4c",
+                    "rotation":"0"
+                }
+            },
+            "cornersSquareOptions":{
+                "type":"extra-rounded",
+                "color":"#000000"
+            },
+            "cornersSquareOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#000000",
+                    "color2":"#000000",
+                    "rotation":"0"
+                }
+            },
+            "cornersDotOptions":{
+                "type":"",
+                "color":"#000000"
+            },
+            "cornersDotOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#000000",
+                    "color2":"#000000",
+                    "rotation":"0"
+                }
+            },
+            "backgroundOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#ffffff",
+                    "color2":"#ffffff",
+                    "rotation":"0"
+                }
+            }           
+        });
 
     }    
     if ( c==="r" ) {
         amount = "0";
         updateN(amount);
-
+        tx = "";
+        qrCode.update({ 
+            "width":350,
+            "height":350,
+            "data":tx,
+            "margin":0,
+            "qrOptions":{
+                "typeNumber":"0",
+                "mode":"Byte",
+                "errorCorrectionLevel":"Q"
+            },
+            "imageOptions":{
+                "hideBackgroundDots":false,
+                "imageSize":0.4,"margin":0
+            },
+            "dotsOptions":{
+                "type":"extra-rounded",
+                "color":"#000000"
+            },
+            "backgroundOptions":{
+                "color":"#ffffff"
+            },
+            "image":null,
+            "dotsOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#6a1a4c",
+                    "color2":"#6a1a4c",
+                    "rotation":"0"
+                }
+            },
+            "cornersSquareOptions":{
+                "type":"extra-rounded",
+                "color":"#000000"
+            },
+            "cornersSquareOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#000000",
+                    "color2":"#000000",
+                    "rotation":"0"
+                }
+            },
+            "cornersDotOptions":{
+                "type":"",
+                "color":"#000000"
+            },
+            "cornersDotOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#000000",
+                    "color2":"#000000",
+                    "rotation":"0"
+                }
+            },
+            "backgroundOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#ffffff",
+                    "color2":"#ffffff",
+                    "rotation":"0"
+                }
+            }           
+        });        
+        
     }
     c = "";
 })
