@@ -90,25 +90,29 @@
         background-color: #2a2a2a; 
         margin: 4px;   
         cursor: pointer;  
-    } 
-    #del {
+        #del {
         width: 31px;
         height: 23px;  
-    }
-    .col1 {
-        fill: #aaa;
-    }          
-    .y:hover {
-        background-color: #3c3c3c;      
-    }
-    .y:hover #del .col1 {
-        fill: #ffffff;
-    }    
-    .y:active {
-        background-color: #ffc11e;         
+            .col1 {
+            fill: #aaa;
+            }         
+        }
     } 
-    .y:active #del .col1 {
-        fill: #de8600;        
+    .y:hover {
+        background-color: #3c3c3c;
+        #del {
+            .col1 {
+            fill: #ffffff;
+            }         
+        }        
+    }
+    .y:active {
+        background-color: #ffc11e;
+        #del {
+            .col1 {
+            fill: #de8600;
+            }         
+        }          
     }    
     .get-code {
         width: 245px;
