@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>EURC Transaction Request</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #161616;
+        overflow: auto;
+        font-family: 'Open Sans', sans-serif;
+    }
+    #world {
+        width: 380px;
+        height: 1220px;
+        position: relative;
+        top: 0px;
+        overflow: hidden;        
+    }
+    #window {
+        width: 380px;
+        height: 610px;
+        overflow: hidden;
+    }     
+    p {
+        font-size: 31px;
+        font-weight: 700;
+        color: #afafaf;
+        text-align: center;
+    } 
+    #orientation{
+        margin: 33px 0px 3px 0px;
+    }
+    #amount {
+        font-size: 40px;
+        font-weight: 600;
+        color: white;
+    }  
+    .currency {
+        font-size: 25px;
+        color: #787878;
+    }         
+    #underline {
+        width: 244px;
+        height: 4px;
+        border-radius: 2px; 
+        background-color: #2a2a2a;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #input-container {
+        width: 252px;
+        height: 336px;
+        margin: 25px 0px 0px 65px;
+    } 
+    .x {
+        width: 76px;
+        height: 76px;
+        font-size: 31px;
+        font-weight: 700;
+        color: #aaaaaa;        
+        border-radius: 6px; 
+        border: none;
+        background-color: #2a2a2a; 
+        margin: 4px;   
+        cursor: pointer;  
+    } 
+    .x:hover {
+        color: #ffffff;
+        background-color: #3c3c3c;
+    }
+    .x:active {
+        color: #de8600;
+        background-color: #ffc11e;
+    }  
+    .get-code {
+        width: 245px;
+        height: 60px;
+        font-size: 25px;
+        font-weight: 700;
+        color: #092c1f;     
+        border-radius: 6px; 
+        border: none;
+        background-color: #50dfaa; 
+        margin: 23px 0px 0px 69px;
+        cursor: pointer;     
+    }
+    .get-code:hover {
+        color: #000000;        
+        background-color: #00bac5;
+    }
+    .get-code:active {
+        color: #de8600;
+        background-color: #ffc11e;
+    }
+    #qr-code {
+        width: 350px;
+        height: 350px;   
+        border-radius: 12px; 
+        background-color: white; 
+        margin: 178px 0px 0px 15px;             
+    }
+    .restart {
+        width: 245px;
+        height: 60px;
+        font-size: 25px;
+        font-weight: 700;
+        color: #2f0d1c;     
+        border-radius: 6px; 
+        border: none;
+        background-color: #ec5f9e; 
+        margin: 23px 0px 0px 69px;
+        cursor: pointer;     
+    }  
+    .restart:hover {
+        color: #000000;        
+        background-color: #00bac5;
+    }
+    .restart:active {
+        color: #de8600;
+        background-color: #ffc11e;
+    }      
+</style>
+<script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+</head>
+<body>
+    
+<div style="max-width: 380px; margin-left: auto; margin-right: auto;">
+<div id="window">    
+<div id="world">
+
+<p id="orientation"><span id="amount">0</span>&nbsp;<span class="currency">EURC</span></p>    
+<div id="underline"></div>    
+<div id="input-container">
+<button class="x" onclick="c='1'">1</button><button class="x" onclick="c='2'">2</button><button class="x" onclick="c='3'">3</button><button class="x" onclick="c='4'">4</button><button class="x" onclick="c='5'">5
+</button><button class="x" onclick="c='6'">6</button><button class="x" onclick="c='7'">7</button><button class="x" onclick="c='8'">8</button><button class="x" onclick="c='9'">9</button><button class="x" onclick="c='.'">.</button><button class="x" onclick="c='0'">0
+</button><button class="x" onclick="c='d'">«</button>
+</div>
+<button class="get-code" onclick="c='q'">Payment Code</button>
+
+<div id="qr-code"><div id="canvas"></div></div>
+<button class="restart" onclick="c='r'">Restart</button>
+
+</div></div></div>
+
+<script type="text/javascript">
+
+var c = "";
+var amount = "0";
+var key = "8HD7zqj1uiYZEUspigezhXS5t6KPndpmzRmJTX4fFpoT";
+var tx = "";
+const world = document.getElementById('world');
+function updateN(x) {
+    document.getElementById("amount").innerHTML=x;
+}
+const qrCode = new QRCodeStyling({
+        "width":350,
+        "height":350,
+        "data":tx,
+        "margin":0,
+        "qrOptions":{
+            "typeNumber":"0",
+            "mode":"Byte",
+            "errorCorrectionLevel":"Q"
+        },
+        "imageOptions":{
+            "hideBackgroundDots":false,
+            "imageSize":0.4,"margin":0
+        },
+        "dotsOptions":{
+            "type":"extra-rounded",
+            "color":"#000000"
+        },
+        "backgroundOptions":{
+            "color":"#ffffff"
+        },
+        "image":null,
+        "dotsOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#6a1a4c",
+                "color2":"#6a1a4c",
+                "rotation":"0"
+            }
+        },
+        "cornersSquareOptions":{
+            "type":"extra-rounded",
+            "color":"#000000"
+        },
+        "cornersSquareOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#000000",
+                "color2":"#000000",
+                "rotation":"0"
+            }
+        },
+        "cornersDotOptions":{
+            "type":"",
+            "color":"#000000"
+        },
+        "cornersDotOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#000000",
+                "color2":"#000000",
+                "rotation":"0"
+            }
+        },
+        "backgroundOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#ffffff",
+                "color2":"#ffffff",
+                "rotation":"0"
+            }
+        }});      
+qrCode.append(document.getElementById("canvas"));
+
+world.addEventListener('click', (event) => {
+    if ( c!="q" && c!="r" ) {
+       if ( !amount.includes(".") && amount.length<3 && c!="d" && c!="." ) {    
+           if ( amount==="0" ) {
+               amount = c;
+           } else {
+               amount += c;
+           }
+           updateN(amount); 
+       } 
+       if ( c==="." && !amount.includes(".") ) {
+           if (amount==="0") {
+               amount = "0.";
+           } else {    
+               amount += c;
+           }
+           updateN(amount); 
+       } 
+       if ( amount.includes(".") && amount.split(".").pop().length<=1 && c!="d" && c!="." ) {
+           amount += c;
+           updateN(amount); 
+       }   
+       if ( c==="d" ) {
+           if (amount.length===1) {
+               amount = "0";
+           } else {    
+               amount = amount.slice(0, -1);
+           }
+           updateN(amount);
+       }
+    } 
+    if ( c==="q" && parseFloat(amount)>0 ) {
+        tx = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
+        qrCode.update({ 
+            "width":350,
+            "height":350,
+            "data":tx,
+            "margin":0,
+            "qrOptions":{
+                "typeNumber":"0",
+                "mode":"Byte",
+                "errorCorrectionLevel":"Q"
+            },
+            "imageOptions":{
+                "hideBackgroundDots":false,
+                "imageSize":0.4,"margin":0
+            },
+            "dotsOptions":{
+                "type":"extra-rounded",
+                "color":"#000000"
+            },
+            "backgroundOptions":{
+                "color":"#ffffff"
+            },
+            "image":null,
+            "dotsOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#6a1a4c",
+                    "color2":"#6a1a4c",
+                    "rotation":"0"
+                }
+            },
+            "cornersSquareOptions":{
+                "type":"extra-rounded",
+                "color":"#000000"
+            },
+            "cornersSquareOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#000000",
+                    "color2":"#000000",
+                    "rotation":"0"
+                }
+            },
+            "cornersDotOptions":{
+                "type":"",
+                "color":"#000000"
+            },
+            "cornersDotOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#000000",
+                    "color2":"#000000",
+                    "rotation":"0"
+                }
+            },
+            "backgroundOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#ffffff",
+                    "color2":"#ffffff",
+                    "rotation":"0"
+                }
+            }           
+        });
+        document.getElementById('world').style.setProperty("top", "-610px");
+    }    
+    if ( c==="r" ) {
+        amount = "0";
+        updateN(amount);
+        tx = "";
+        qrCode.update({ 
+            "width":350,
+            "height":350,
+            "data":tx,
+            "margin":0,
+            "qrOptions":{
+                "typeNumber":"0",
+                "mode":"Byte",
+                "errorCorrectionLevel":"Q"
+            },
+            "imageOptions":{
+                "hideBackgroundDots":false,
+                "imageSize":0.4,"margin":0
+            },
+            "dotsOptions":{
+                "type":"extra-rounded",
+                "color":"#000000"
+            },
+            "backgroundOptions":{
+                "color":"#ffffff"
+            },
+            "image":null,
+            "dotsOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#6a1a4c",
+                    "color2":"#6a1a4c",
+                    "rotation":"0"
+                }
+            },
+            "cornersSquareOptions":{
+                "type":"extra-rounded",
+                "color":"#000000"
+            },
+            "cornersSquareOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#000000",
+                    "color2":"#000000",
+                    "rotation":"0"
+                }
+            },
+            "cornersDotOptions":{
+                "type":"",
+                "color":"#000000"
+            },
+            "cornersDotOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#000000",
+                    "color2":"#000000",
+                    "rotation":"0"
+                }
+            },
+            "backgroundOptionsHelper":{
+                "colorType":{
+                    "single":true,
+                    "gradient":false
+                },
+                "gradient":{
+                    "linear":true,
+                    "radial":false,
+                    "color1":"#ffffff",
+                    "color2":"#ffffff",
+                    "rotation":"0"
+                }
+            }           
+        });        
+        document.getElementById('world').style.setProperty("top", "0px");        
+    }
+    c = "";
+})
+
+</script>
+
+</body>
+</html>
