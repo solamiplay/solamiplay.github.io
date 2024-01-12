@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>EURC Transaction Request</title>
+<title>basket-3f-js-qr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
@@ -20,13 +20,13 @@
         height: 1220px;
         position: relative;
         top: 0px;
-        overflow: hidden;        
-    }
+        overflow: hidden;
+    }  
     #window {
         width: 380px;
         height: 610px;
         overflow: hidden;
-    }     
+    }       
     p {
         font-size: 31px;
         font-weight: 700;
@@ -78,7 +78,7 @@
     .x:active {
         color: #de8600;
         background-color: #ffc11e;
-    }  
+    }   
     .get-code {
         width: 245px;
         height: 60px;
@@ -125,7 +125,7 @@
     .restart:active {
         color: #de8600;
         background-color: #ffc11e;
-    }  
+    } 
     .z {
         width: 245px;
         height: 60px;
@@ -145,14 +145,14 @@
     .z:active {
         color: #de8600;
         background-color: #ffc11e;
-    }        
+    }          
 </style>
 <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
 <body>
     
 <div style="max-width: 380px; margin-left: auto; margin-right: auto;">
-<div id="window">    
+<div id="window"> 
 <div id="world">
 
 <p id="orientation"><span id="amount">0</span>&nbsp;<span class="currency">EURC</span></p>    
@@ -469,8 +469,11 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });        
-        document.getElementById('world').style.setProperty("top", "0px");        
+        document.getElementById('world').style.setProperty("top", "0px");         
     }
+    if ( c==="z" ) {     
+        qrCode.download({ name: "qr", extension: "svg" });        
+    }    
     c = "";
 })
 
