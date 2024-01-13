@@ -57,7 +57,7 @@
     #input-container {
         width: 252px;
         height: 336px;
-        margin: 16px 0px 0px 65px;
+        margin: 6px 0px 0px 65px;
     } 
     .x {
         width: 76px;
@@ -101,7 +101,7 @@
     }
     #wallet {
         width: 350px;
-        height: 150px;   
+        height: 145px;   
         border-radius: 12px; 
         background-color: white; 
         margin: 141px 0px 0px 15px;             
@@ -136,7 +136,7 @@
     .w {
         width: 245px;
         height: 60px;
-        font-size: 25px;
+        font-size: 22px;
         font-weight: 700;
         color: #aaaaaa;        
         border-radius: 6px; 
@@ -156,7 +156,7 @@
     .z {
         width: 245px;
         height: 60px;
-        font-size: 25px;
+        font-size: 22px;
         font-weight: 700;
         color: #aaaaaa;        
         border-radius: 6px; 
@@ -174,11 +174,23 @@
         background-color: #ffc11e;
     }
     textarea {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 29px;
+        font-weight: 700;
+        color: #191919;         
         resize: none;
+        border: none;
+        margin: 9px 0px 0px 16px;
     } 
+    #input::placeholder {
+        color: #aaaaaa; 
+    }     
     #input:focus::placeholder {
         color: transparent;
-    }                 
+    }   
+    #input:focus {
+        outline: none;
+    }                   
 </style>
 <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
@@ -188,7 +200,7 @@
 
 <div id="world">
 
-<div id="wallet"><form><textarea name="input" id="input" cols="30" rows="3" placeholder="00000000000000000000000000000000000000000000" maxlength="44"></textarea></form></div>
+<div id="wallet"><form><textarea name="input" id="input" cols="18" rows="3" placeholder="00000000000000000000000000000000000000000000" maxlength="44"></textarea></form></div>
 <button class="w" onclick="c='i'">Save Wallet</button>
 
 <p id="orientation"><span id="amount">0</span>&nbsp;<span class="currency">EURC</span></p>  
