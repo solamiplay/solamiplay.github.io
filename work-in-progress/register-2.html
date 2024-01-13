@@ -172,13 +172,10 @@
     .z:active {
         color: #de8600;
         background-color: #ffc11e;
-    }
-    textarea {
-        resize: none;
     } 
-    #input:focus::placeholder {
+    input:focus::placeholder {
         color: transparent;
-    }                 
+    }           
 </style>
 <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
@@ -188,7 +185,7 @@
 
 <div id="world">
 
-<div id="wallet"><form><textarea name="input" id="input" cols="30" rows="3" placeholder="00000000000000000000000000000000000000000000" maxlength="44"></textarea></form></div>
+<div id="wallet"><form><input type="text" placeholder="00000000000000000000000000000000000000000000"></form></div>
 <button class="w" onclick="c='i'">Save Wallet</button>
 
 <p id="orientation"><span id="amount">0</span>&nbsp;<span class="currency">EURC</span></p>  
