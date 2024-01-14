@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Solana Pay EURC Transaction Request</title>
+<title>Solana Pay Stablecoin Transaction Request</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
@@ -55,9 +55,10 @@
         font-weight: 600;
         color: white;
     }  
-    .currency {
+    #currency {
         font-size: 25px;
         color: #787878;
+        cursor: pointer;
     }         
     #underline {
         width: 244px;
@@ -215,11 +216,11 @@
 <div id="world">
 
 <p id="solana">Solana Pay</p>
-<p id="pagetitle">EURC Transaction Request</p>
+<p id="pagetitle">Transaction Request</p>
 <div id="wallet"><form><textarea name="input" id="input" cols="18" rows="3" placeholder="00000000000000000000000000000000000000000000" maxlength="44"></textarea></form></div>
 <button class="w" onclick="c='i'">Receiver Address</button>
 
-<p id="orientation"><span id="amount">0</span>&nbsp;<span class="currency">EURC</span></p>  
+<p id="orientation"><span id="amount">0</span>&nbsp;<span id="currency" onclick="c='c'">EURC</span></p>  
 <div id="underline"></div>    
 <div id="input-container">
 <button class="x" onclick="c='1'">1</button><button class="x" onclick="c='2'">2</button><button class="x" onclick="c='3'">3</button><button class="x" onclick="c='4'">4</button><button class="x" onclick="c='5'">5
@@ -239,6 +240,7 @@
 
 var c = "";
 var amount = "0";
+var curr = "EURC";
 var key = "";
 var getcode = "";
 var tx = "";
@@ -246,6 +248,10 @@ const world = document.getElementById('world');
 function updateN(x) {
     document.getElementById("amount").innerHTML=x;
 }
+function updateC(x) {
+    document.getElementById("currency").innerHTML=x;
+}
+
 
 key = "8HD7zqj1uiYZEUspigezhXS5t6KPndpmzRmJTX4fFpoT";
 getcode = key.slice(0, 3) + "…" + key.slice(-3);
@@ -336,7 +342,7 @@ const qrCode = new QRCodeStyling({
 qrCode.append(document.getElementById("canvas"));
 
 world.addEventListener('click', (event) => {
-    if ( c!="q" && c!="r" && c!="i" && c!="w" && c!="z" && c!="" ) {
+    if ( c!="q" && c!="r" && c!="i" && c!="w" && c!="z" && c!="" && c!="c" ) {
        if ( !amount.includes(".") && amount.length<3 && c!="d" && c!="." ) {    
            if ( amount==="0" ) {
                amount = c;
@@ -364,7 +370,7 @@ world.addEventListener('click', (event) => {
                amount = amount.slice(0, -1);
            }
            updateN(amount);
-       }
+       }      
     } 
     if ( c==="q" && parseFloat(amount)>0 ) {
         tx = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
@@ -544,7 +550,16 @@ world.addEventListener('click', (event) => {
     }
     if ( c==="z" ) {     
         qrCode.download({ name: "qr", extension: "svg" });        
-    }    
+    }  
+    if ( c==="c" ) {
+        if (curr === "EURC") {
+            curr = "USDC";
+            updateC(curr);
+        } else {    
+            curr = "EURC";            
+            updateC(curr);
+        }
+    }       
     c = "";
 })
 
