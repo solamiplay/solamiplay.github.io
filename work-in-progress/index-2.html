@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Solana Pay Stablecoin Transaction Request</title>
+<title>Solana Pay EURC Transaction Request</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     }
     #world {
         width: 380px;
-        height: 1830px;
+        height: 1220px;
         position: relative;
         top: 0px;
         overflow: hidden;
@@ -26,20 +26,6 @@
         width: 380px;
         height: 610px;
         overflow: hidden;
-    }
-    #solana {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 20px;        
-        color: #e8e8e8; 
-        margin: 28px 0px 0px 0px;
-    }     
-    #pagetitle {
-        font-size: 22px;
-        font-weight: 700;
-        line-height: 22px;
-        color: #50dfaa;  
-        margin: 10px 0px 0px 0px;       
     }       
     p {
         font-size: 31px;
@@ -48,17 +34,16 @@
         text-align: center;
     } 
     #orientation{
-        margin: 297px 0px 3px 0px;
+        margin: 33px 0px 3px 0px;
     }
     #amount {
         font-size: 40px;
         font-weight: 600;
         color: white;
     }  
-    #currency {
+    .currency {
         font-size: 25px;
         color: #787878;
-        cursor: pointer;
     }         
     #underline {
         width: 244px;
@@ -72,7 +57,7 @@
     #input-container {
         width: 252px;
         height: 336px;
-        margin: 6px 0px 0px 65px;
+        margin: 25px 0px 0px 65px;
     } 
     .x {
         width: 76px;
@@ -94,7 +79,7 @@
         color: #de8600;
         background-color: #ffc11e;
     }   
-    #get-code {
+    .get-code {
         width: 245px;
         height: 60px;
         font-size: 25px;
@@ -103,30 +88,23 @@
         border-radius: 6px; 
         border: none;
         background-color: #50dfaa; 
-        margin: 16px 0px 0px 69px;
+        margin: 23px 0px 0px 69px;
         cursor: pointer;     
     }
-    #get-code:hover {
+    .get-code:hover {
         color: #000000;        
         background-color: #00bac5;
     }
-    #get-code:active {
+    .get-code:active {
         color: #de8600;
         background-color: #ffc11e;
     }
-    #wallet {
-        width: 350px;
-        height: 145px;   
-        border-radius: 12px; 
-        background-color: white; 
-        margin: 30px 0px 0px 15px;             
-    }    
     #qr-code {
         width: 350px;
         height: 350px;   
         border-radius: 12px; 
         background-color: white; 
-        margin: 91px 0px 0px 15px;             
+        margin: 141px 0px 0px 15px;             
     }
     .restart {
         width: 245px;
@@ -148,30 +126,10 @@
         color: #de8600;
         background-color: #ffc11e;
     } 
-    .w {
-        width: 245px;
-        height: 60px;
-        font-size: 22px;
-        font-weight: 700;
-        color: #aaaaaa;        
-        border-radius: 6px; 
-        border: none;
-        background-color: #2a2a2a; 
-        margin: 14px 0px 0px 69px; 
-        cursor: pointer;  
-    } 
-    .w:hover {
-        color: #ffffff;
-        background-color: #3c3c3c;
-    }
-    .w:active {
-        color: #de8600;
-        background-color: #ffc11e;
-    }     
     .z {
         width: 245px;
         height: 60px;
-        font-size: 22px;
+        font-size: 25px;
         font-weight: 700;
         color: #aaaaaa;        
         border-radius: 6px; 
@@ -187,25 +145,7 @@
     .z:active {
         color: #de8600;
         background-color: #ffc11e;
-    }
-    textarea {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 29px;
-        font-weight: 700;
-        color: #191919;         
-        resize: none;
-        border: none;
-        margin: 9px 0px 0px 16px;
-    } 
-    #input::placeholder {
-        color: #aaaaaa; 
-    }     
-    #input:focus::placeholder {
-        color: transparent;
-    }   
-    #input:focus {
-        outline: none;
-    }                   
+    }          
 </style>
 <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
@@ -215,23 +155,17 @@
 <div id="window"> 
 <div id="world">
 
-<p id="solana">Solana Pay</p>
-<p id="pagetitle">Transaction Request</p>
-<div id="wallet"><form><textarea name="input" id="input" cols="18" rows="3" placeholder="00000000000000000000000000000000000000000000" maxlength="44"></textarea></form></div>
-<button class="w" onclick="c='i'">Receiver Address</button>
-
-<p id="orientation"><span id="amount">0</span>&nbsp;<span id="currency" onclick="c='c'">EURC</span></p>  
+<p id="orientation"><span id="amount">0</span>&nbsp;<span class="currency">EURC</span></p>    
 <div id="underline"></div>    
 <div id="input-container">
 <button class="x" onclick="c='1'">1</button><button class="x" onclick="c='2'">2</button><button class="x" onclick="c='3'">3</button><button class="x" onclick="c='4'">4</button><button class="x" onclick="c='5'">5
 </button><button class="x" onclick="c='6'">6</button><button class="x" onclick="c='7'">7</button><button class="x" onclick="c='8'">8</button><button class="x" onclick="c='9'">9</button><button class="x" onclick="c='.'">.</button><button class="x" onclick="c='0'">0
 </button><button class="x" onclick="c='d'">«</button>
 </div>
-<button id="get-code" onclick="c='q'">Payment Code</button>
-<button class="w" onclick="c='w'">Change Address</button>
+<button class="get-code" onclick="c='q'">Payment Code</button>
 
 <div id="qr-code"><div id="canvas"></div></div>
-<button class="restart" onclick="c='r'">New Request</button>
+<button class="restart" onclick="c='r'">Restart</button>
 <button class="z" onclick="c='z'">Download</button>
 
 </div></div></div>
@@ -240,25 +174,11 @@
 
 var c = "";
 var amount = "0";
-var curr = "EURC";
-var key = "";
-var getcode = "";
+var key = "8HD7zqj1uiYZEUspigezhXS5t6KPndpmzRmJTX4fFpoT";
 var tx = "";
 const world = document.getElementById('world');
 function updateN(x) {
     document.getElementById("amount").innerHTML=x;
-}
-function updateC(x) {
-    document.getElementById("currency").innerHTML=x;
-}
-function jumpP(x) {
-    document.getElementById('world').style.setProperty("top", x);
-}
-if (localStorage && 'addy' in localStorage) {
-    key = localStorage.getItem("addy");
-    getcode = key.slice(0, 3) + "…" + key.slice(-3);
-    document.getElementById('get-code').innerHTML=getcode;    
-    jumpP("-610px");
 }
 const qrCode = new QRCodeStyling({
         "width":350,
@@ -345,8 +265,8 @@ const qrCode = new QRCodeStyling({
 qrCode.append(document.getElementById("canvas"));
 
 world.addEventListener('click', (event) => {
-    if ( c!="q" && c!="r" && c!="i" && c!="w" && c!="z" && c!="" && c!="c" ) {
-       if ( !amount.includes(".") && amount.length<3 && c!="d" && c!="." ) {    
+    if ( c!="q" && c!="r" ) {
+       if ( !amount.includes(".") && amount.length<3 && c!="d" && c!="." && c!="" ) {    
            if ( amount==="0" ) {
                amount = c;
            } else {
@@ -373,14 +293,10 @@ world.addEventListener('click', (event) => {
                amount = amount.slice(0, -1);
            }
            updateN(amount);
-       }      
+       }
     } 
     if ( c==="q" && parseFloat(amount)>0 ) {
-        if (curr === "EURC") {
-            tx = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
-        } else {    
-            tx = "solana:" + key + "?amount=" + amount + "&spl-token=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
-        }
+        tx = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
         qrCode.update({ 
             "width":350,
             "height":350,
@@ -464,7 +380,7 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });
-        jumpP("-1220px");
+        document.getElementById('world').style.setProperty("top", "-610px");
     }    
     if ( c==="r" ) {
         amount = "0";
@@ -553,34 +469,10 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });        
-        jumpP("-610px");         
+        document.getElementById('world').style.setProperty("top", "0px");         
     }
     if ( c==="z" ) {     
         qrCode.download({ name: "qr", extension: "svg" });        
-    }  
-    if ( c==="c" ) {
-        if (curr === "EURC") {
-            curr = "USDC";
-            updateC(curr);
-        } else {    
-            curr = "EURC";            
-            updateC(curr);
-        }
-    }  
-    if ( c==="i" ) { 
-        key = document.getElementById('input').value
-        if ( key.length === 44) {
-            window.localStorage.setItem("addy", key);
-            getcode = key.slice(0, 3) + "…" + key.slice(-3);
-            document.getElementById('get-code').innerHTML=getcode; 
-            jumpP("-610px");
-        }  
-    } 
-    if ( c==="w" ) { 
-        key = "";
-        document.getElementById('get-code').innerHTML="Payment Code";
-        window.localStorage.removeItem("addy");
-        jumpP("0px");
     }    
     c = "";
 })

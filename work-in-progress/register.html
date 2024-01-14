@@ -212,7 +212,7 @@
 <body>
     
 <div style="max-width: 380px; margin-left: auto; margin-right: auto;">
-
+<div id="window"> 
 <div id="world">
 
 <p id="solana">Solana Pay</p>
@@ -234,7 +234,7 @@
 <button class="restart" onclick="c='r'">New Request</button>
 <button class="z" onclick="c='z'">Download</button>
 
-</div></div>
+</div></div></div>
 
 <script type="text/javascript">
 
@@ -251,12 +251,15 @@ function updateN(x) {
 function updateC(x) {
     document.getElementById("currency").innerHTML=x;
 }
-
-
-key = "8HD7zqj1uiYZEUspigezhXS5t6KPndpmzRmJTX4fFpoT";
-getcode = key.slice(0, 3) + "…" + key.slice(-3);
-document.getElementById('get-code').innerHTML=getcode;
-
+function jumpP(x) {
+    document.getElementById('world').style.setProperty("top", x);
+}
+if (localStorage && 'addy' in localStorage) {
+    key = localStorage.getItem("addy");
+    getcode = key.slice(0, 3) + "…" + key.slice(-3);
+    document.getElementById('get-code').innerHTML=getcode;    
+    jumpP("-610px");
+}
 const qrCode = new QRCodeStyling({
         "width":350,
         "height":350,
@@ -373,7 +376,11 @@ world.addEventListener('click', (event) => {
        }      
     } 
     if ( c==="q" && parseFloat(amount)>0 ) {
-        tx = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
+        if (curr === "EURC") {
+            tx = "solana:" + key + "?amount=" + amount + "&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr";
+        } else {    
+            tx = "solana:" + key + "?amount=" + amount + "&spl-token=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+        }
         qrCode.update({ 
             "width":350,
             "height":350,
@@ -457,7 +464,7 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });
-        //document.getElementById('world').style.setProperty("top", "-610px");
+        jumpP("-1220px");
     }    
     if ( c==="r" ) {
         amount = "0";
@@ -546,7 +553,7 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });        
-        //document.getElementById('world').style.setProperty("top", "0px");         
+        jumpP("-610px");         
     }
     if ( c==="z" ) {     
         qrCode.download({ name: "qr", extension: "svg" });        
@@ -559,7 +566,22 @@ world.addEventListener('click', (event) => {
             curr = "EURC";            
             updateC(curr);
         }
-    }       
+    }  
+    if ( c==="i" ) { 
+        key = document.getElementById('input').value
+        if ( key.length === 44) {
+            window.localStorage.setItem("addy", key);
+            getcode = key.slice(0, 3) + "…" + key.slice(-3);
+            document.getElementById('get-code').innerHTML=getcode; 
+            jumpP("-610px");
+        }  
+    } 
+    if ( c==="w" ) { 
+        key = "";
+        document.getElementById('get-code').innerHTML="Payment Code";
+        window.localStorage.removeItem("addy");
+        jumpP("0px");
+    }    
     c = "";
 })
 

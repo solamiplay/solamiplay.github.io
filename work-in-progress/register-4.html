@@ -212,7 +212,7 @@
 <body>
     
 <div style="max-width: 380px; margin-left: auto; margin-right: auto;">
-<div id="window"> 
+
 <div id="world">
 
 <p id="solana">Solana Pay</p>
@@ -234,7 +234,7 @@
 <button class="restart" onclick="c='r'">New Request</button>
 <button class="z" onclick="c='z'">Download</button>
 
-</div></div></div>
+</div></div>
 
 <script type="text/javascript">
 
@@ -258,7 +258,7 @@ if (localStorage && 'addy' in localStorage) {
     key = localStorage.getItem("addy");
     getcode = key.slice(0, 3) + "…" + key.slice(-3);
     document.getElementById('get-code').innerHTML=getcode;    
-    jumpP("-610px");
+    // jumpP("-610px");
 }
 const qrCode = new QRCodeStyling({
         "width":350,
@@ -464,7 +464,7 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });
-        jumpP("-1220px");
+        // jumpP("-1220px");
     }    
     if ( c==="r" ) {
         amount = "0";
@@ -553,7 +553,7 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });        
-        jumpP("-610px");         
+        // jumpP("-610px");         
     }
     if ( c==="z" ) {     
         qrCode.download({ name: "qr", extension: "svg" });        
@@ -573,14 +573,14 @@ world.addEventListener('click', (event) => {
             window.localStorage.setItem("addy", key);
             getcode = key.slice(0, 3) + "…" + key.slice(-3);
             document.getElementById('get-code').innerHTML=getcode; 
-            jumpP("-610px");
+            // jumpP("-610px");
         }  
     } 
     if ( c==="w" ) { 
         key = "";
         document.getElementById('get-code').innerHTML="Payment Code";
         window.localStorage.removeItem("addy");
-        jumpP("0px");
+        // jumpP("0px");
     }    
     c = "";
 })
