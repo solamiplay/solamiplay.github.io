@@ -24,7 +24,7 @@
     }  
     #window {
         width: 380px;
-        height: 570px;
+        height: 610px;
         overflow: hidden;
     }
     #solana {
@@ -48,10 +48,10 @@
         text-align: center;
     } 
     #orientation{
-        margin: 259px 0px 3px 0px;
+        margin: 297px 0px 3px 0px;
     }
     #amount {
-        font-size: 35px;
+        font-size: 40px;
         font-weight: 600;
         color: white;
     }  
@@ -71,13 +71,13 @@
     }
     #input-container {
         width: 252px;
-        height: 272px;
+        height: 336px;
         margin: 6px 0px 0px 65px;
     } 
     .x {
         width: 76px;
-        height: 60px;
-        font-size: 28px;
+        height: 76px;
+        font-size: 31px;
         font-weight: 700;
         color: #aaaaaa;        
         border-radius: 6px; 
@@ -122,18 +122,11 @@
         margin: 30px 0px 0px 15px;             
     }    
     #qr-code {
-        width: 356px;
-        height: 356px;   
-        border-radius: 6px; 
-        background-color: white; 
-        margin: 98px 0px 0px 12px;          
-    }
-    #canvas {
         width: 350px;
-        height: 350px;
-        position: relative;
-        top: 3px;
-        left: 3px;                    
+        height: 350px;   
+        border-radius: 12px; 
+        background-color: white; 
+        margin: 91px 0px 0px 15px;             
     }
     .restart {
         width: 245px;
@@ -253,18 +246,6 @@ var getcode = "";
 var tx = "";
 const world = document.getElementById('world');
 function updateN(x) {
-    if ( !x.includes(".") ) {
-        if ( x.length >= 4 ) {
-            x = [x.slice(0, x.length-3), ",", x.slice(x.length-3)].join('');
-        }         
-    } else {
-        a = x.split(".")[0];
-        b = x.split(".")[1];
-        if ( a.length >= 4 ) {
-            a = [a.slice(0, a.length-3), ",", a.slice(a.length-3)].join('');
-        }
-        x = a + "." + b;                 
-    }        
     document.getElementById("amount").innerHTML=x;
 }
 function updateC(x) {
@@ -277,7 +258,7 @@ if (localStorage && 'addy' in localStorage) {
     key = localStorage.getItem("addy");
     getcode = key.slice(0, 3) + "…" + key.slice(-3);
     document.getElementById('get-code').innerHTML=getcode;    
-    jumpP("-570px");
+    jumpP("-610px");
 }
 const qrCode = new QRCodeStyling({
         "width":350,
@@ -365,7 +346,7 @@ qrCode.append(document.getElementById("canvas"));
 
 world.addEventListener('click', (event) => {
     if ( c!="q" && c!="r" && c!="i" && c!="w" && c!="z" && c!="" && c!="c" ) {
-       if ( !amount.includes(".") && amount.length<6 && c!="d" && c!="." ) {    
+       if ( !amount.includes(".") && amount.length<3 && c!="d" && c!="." ) {    
            if ( amount==="0" ) {
                amount = c;
            } else {
@@ -483,7 +464,7 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });
-        jumpP("-1140px");
+        jumpP("-1220px");
     }    
     if ( c==="r" ) {
         amount = "0";
@@ -572,7 +553,7 @@ world.addEventListener('click', (event) => {
                 }
             }           
         });        
-        jumpP("-570px");         
+        jumpP("-610px");         
     }
     if ( c==="z" ) {     
         qrCode.download({ name: "qr", extension: "svg" });        
@@ -592,7 +573,7 @@ world.addEventListener('click', (event) => {
             window.localStorage.setItem("addy", key);
             getcode = key.slice(0, 3) + "…" + key.slice(-3);
             document.getElementById('get-code').innerHTML=getcode; 
-            jumpP("-570px");
+            jumpP("-610px");
         }  
     } 
     if ( c==="w" ) { 
