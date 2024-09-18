@@ -25,3 +25,11 @@ body {
     background-color: white; 
     margin: 0px 0px 0px 12px;
 }
+.logo {
+    display: inline-block;
+    width: 73px;
+    height: 44px;
+    background: black;
+    mask-size: cover;
+    mask: url(https://solamiplay.github.io/eur/img/netzgeld.svg);
+}
