@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #fff;
     overflow: auto;
     font-family: 'Open Sans', sans-serif;
 }
@@ -10,28 +9,40 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+/*#active{
+    width: 380px;
+    height: 570px;
+    overflow: hidden;
+}*/
 #pages {
     width: 380px;
     height: 1140px;
     position: relative;
-    top: 0px;
+    top: 0;
     overflow: hidden;
-    background-color: #f8edd7;
 }
 .header {
     width: 356px;
-    height: 89px;   
+    height: 88px;   
     border-radius: 0px 0px 10px 10px; 
-    background-color: white; 
-    margin: 0px 0px 0px 12px;
+    margin: 1px 0 0 12px;
 }
 .logo {
     display: inline-block;
     width: 73px;
     height: 44px;
-    background: #f94958;
     mask: url(https://solamiplay.github.io/eur/img/netzgeld.svg);
     /*mask-size: cover;*/
     mask-repeat: no-repeat;
-    margin: 23px 0px 0px 134px;
+    margin: 23px 0 0 142px;
 }
+.m1-1 {background-color: #f8edd7;}
+.m1-2 {background-color: #eaeaea;}
+.m1-3 {background-color: #161616;}
+.m2-1 {background-color: white;}
+.m2-2 {width:354px;height:86px;background-color: #eeeeee;border:1px solid #f3f3f3;box-shadow: 0 1px 3.5px -1px #afafaf;}
+.m2-3 {background-color: #161616;}
+.m3-1 {background-color: #f94958;}
+.m3-2 {background-color: #3c3c3c;margin: 22px 0 0 141px;}
+.m3-3 {background-color: #ec5f9e;}
+
