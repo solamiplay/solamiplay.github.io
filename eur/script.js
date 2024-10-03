@@ -6,7 +6,7 @@ var x3 = document.getElementById('i3')
 
 //
 function jumpP(x) {
-    pages.style.setProperty("top", x)
+    pages.style.setProperty('top', x)
 }
 function switchMode(from,to) {
     x1.classList.remove('m1-'+from)
