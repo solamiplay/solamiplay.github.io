@@ -1,7 +1,13 @@
 const check = document.querySelector('body');
+const pages = document.getElementById('pages');
 var x1 = document.body;
 var x2 = document.getElementById('i2')
 var x3 = document.getElementById('i3')
+
+//
+function jumpP(x) {
+    pages.style.setProperty("top", x);
+}
 function switchMode(from,to) {
     x1.classList.remove('m1-'+from);
     x1.classList.add('m1-'+to);
@@ -10,7 +16,9 @@ function switchMode(from,to) {
     x3.classList.remove('m3-'+from);
     x3.classList.add('m3-'+to);
 }
-i2.addEventListener('click', function(){
+
+//
+i3.addEventListener('click', function(){
     if (check.classList.contains('m1-1')) {
         switchMode(1,2);
         localStorage.setItem('Mode','2');
@@ -30,3 +38,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     switchMode(1,3);
   }  
 });
+
+/*
+*/
