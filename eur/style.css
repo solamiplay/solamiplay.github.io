@@ -46,6 +46,7 @@ body {
     mask: url(https://solamiplay.github.io/eur/img/netzgeld.svg);
     mask-size: cover;
     mask-repeat: no-repeat;  
+    padding: -1px;
 }
 .logo:hover {
     cursor: pointer;
