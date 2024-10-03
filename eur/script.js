@@ -16,20 +16,24 @@ function switchMode(from,to) {
     x3.classList.remove('m3-'+from);
     x3.classList.add('m3-'+to);
 }
+var clk = function()
+{
+    if (this.id === "i3") {
+        if (check.classList.contains('m1-1')) {
+            switchMode(1,2);
+            localStorage.setItem('Mode','2');
+        } else if (check.classList.contains('m1-2')) {
+            switchMode(2,3);
+            localStorage.setItem('Mode','3');
+        } else {
+            switchMode(3,1);
+            localStorage.setItem('Mode','1');
+        }  
+    }
+}
 
 //
-i3.addEventListener('click', function(){
-    if (check.classList.contains('m1-1')) {
-        switchMode(1,2);
-        localStorage.setItem('Mode','2');
-    } else if (check.classList.contains('m1-2')) {
-        switchMode(2,3);
-        localStorage.setItem('Mode','3');
-    } else {
-        switchMode(3,1);
-        localStorage.setItem('Mode','1');
-    }  
-}, false);
+document.getElementById('i3').onclick = clk;
 document.addEventListener('DOMContentLoaded', (event) => {
   if (localStorage.getItem('Mode') === '2') {
     switchMode(1,2);

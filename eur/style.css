@@ -47,9 +47,6 @@ body {
     mask-size: 99%;
     mask-repeat: no-repeat;  
 }
-.logo:hover {
-    cursor: pointer;
-}
 
 .m1-1 {background-color: #f8edd7;}
 .m1-2 {background-color: #eaeaea;}
@@ -60,6 +57,8 @@ body {
 .m3-1 {background-color: #f94958;}
 .m3-2 {background-color: #3c3c3c;}
 .m3-3 {background-color: #ec5f9e;}
+
+#i3:hover {cursor: pointer;}
 
 /*
 */
