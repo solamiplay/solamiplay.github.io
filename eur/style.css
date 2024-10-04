@@ -4,6 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: start;
+    font-family: 'Open Sans', sans-serif;
 }
 #stage {
     --r: 480 / 750;
@@ -47,7 +48,7 @@ body {
     mask-size: 99%;
     mask-repeat: no-repeat;  
 }
-.amount {
+.data {
     width: 94%;
     height: 11.2%;   
     display: flex;
@@ -59,6 +60,23 @@ body {
     border-radius: 2% 2% 2% 2% / 10.6% 10.6% 10.6% 10.6%; 
     margin: 4.8% 3% 0 3%;
 }
+.amount {
+    position:relative;
+    top:-1%;
+    font-size: min(7.5vh, 46px);
+    font-weight: 700;
+}
+.currency {
+    font-weight: 800;
+    font-size: min(5.2vh, 32px);
+}
+.in-bg {
+    width: 92.4%;
+    height: 48.4%; 
+    margin: 6.2% 3.8% 0 3.8%; 
+}
+
+/* next height or margin .4 */
 
 .m1-1 {background-color: #f8edd7;}
 .m1-2 {background-color: #eaeaea;}
@@ -72,6 +90,15 @@ body {
 .m4-1 {border-color: #eedfc3; background-color: #fefdfc;}
 .m4-2 {border-color: #e1e1e1; background-color: white;}
 .m4-3 {border-color: #2a2a2a; background-color: #1a1a1a;}
+.m5-1 {color: #0a1f44;}
+.m5-2 {color: #262626;}
+.m5-3 {color: white;}
+.m6-1 {color: #858fa2;}
+.m6-2 {color: #a6a6a6;}
+.m6-3 {color: #787878;}
+.m7-1 {background-color: #f2e3c7;}
+.m7-2 {background-color: #e1e1e1;}
+.m7-3 {background-color: #222222;}
 
 #i3:hover {cursor: pointer;}
 

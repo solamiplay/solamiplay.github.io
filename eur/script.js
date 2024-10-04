@@ -1,23 +1,16 @@
 const check = document.querySelector('body')
-const pages = document.getElementById('pages')
-var x1 = document.body
-var x2 = document.getElementById('i2')
-var x3 = document.getElementById('i3')
-var x4 = document.getElementById('i4')
 
 //
 function jumpP(x) {
-    pages.style.setProperty('top', x)
+    document.getElementById('pages').style.setProperty('top', x)
 }
 function switchMode(from,to) {
-    x1.classList.remove('m1-'+from)
-    x1.classList.add('m1-'+to)
-    x2.classList.remove('m2-'+from)
-    x2.classList.add('m2-'+to)
-    x3.classList.remove('m3-'+from)
-    x3.classList.add('m3-'+to)
-    x4.classList.remove('m4-'+from)
-    x4.classList.add('m4-'+to)
+    let n = 1;
+    while (n < 8) {
+        document.getElementById('i'+n).classList.remove('m'+n+'-'+from)
+        document.getElementById('i'+n).classList.add('m'+n+'-'+to)
+        n++
+    }   
 }
 var clk = function() {
     if (this.id === "i3") {
