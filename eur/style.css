@@ -44,7 +44,7 @@ body {
     width: 20.6%;
     height: 50.4%;
     margin-bottom: 0.5%;
-    mask: url(https://solamiplay.github.io/eur/img/netzgeld.svg);
+    mask: url("https://solamiplay.github.io/eur/img/netzgeld.svg");
     mask-size: 99%;
     mask-repeat: no-repeat;  
 }
