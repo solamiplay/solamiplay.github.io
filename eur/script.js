@@ -6,7 +6,7 @@ function jumpP(x) {
 }
 function switchMode(from,to) {
     let n = 1
-    while (n < 8) {
+    while (n <= 7) {
         document.getElementById('i'+n).classList.remove('m'+n+'-'+from)
         document.getElementById('i'+n).classList.add('m'+n+'-'+to)
         n++
