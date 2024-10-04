@@ -3,6 +3,7 @@ const pages = document.getElementById('pages')
 var x1 = document.body
 var x2 = document.getElementById('i2')
 var x3 = document.getElementById('i3')
+var x4 = document.getElementById('i4')
 
 //
 function jumpP(x) {
@@ -15,6 +16,8 @@ function switchMode(from,to) {
     x2.classList.add('m2-'+to)
     x3.classList.remove('m3-'+from)
     x3.classList.add('m3-'+to)
+    x4.classList.remove('m4-'+from)
+    x4.classList.add('m4-'+to)
 }
 var clk = function() {
     if (this.id === "i3") {
