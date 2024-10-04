@@ -5,7 +5,7 @@ function jumpP(x) {
     document.getElementById('pages').style.setProperty('top', x)
 }
 function switchMode(from,to) {
-    let n = 1;
+    let n = 1
     while (n < 8) {
         document.getElementById('i'+n).classList.remove('m'+n+'-'+from)
         document.getElementById('i'+n).classList.add('m'+n+'-'+to)
