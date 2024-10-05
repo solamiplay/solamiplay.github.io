@@ -71,9 +71,118 @@ body {
     font-size: min(5.2vh, 32px);
 }
 .in-bg {
-    width: 92.4%;
-    height: 48.4%; 
-    margin: 6.2% 3.8% 0 3.8%; 
+    width: 92%;
+    height: 48.5%; 
+    margin: 6.2% 4% 0 4%; 
+}
+.btn1 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3);
+    margin-bottom: min(0.4vh, 3px);
+    margin-right: min(0.4vh, 3px); 
+    border-radius: 0 0 9% 0 / 0 0 14.6% 0; 
+}
+.btn2 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3);
+    margin-bottom: min(0.4vh, 3px);
+    margin-right: min(0.4vh, 3px);
+    border-radius: 0 0 9% 9% / 0 0 14.6% 14.6%; 
+}
+.btn3 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3);
+    margin-bottom: min(0.4vh, 3px);
+    border-radius: 0 0 0 9% / 0 0 0 14.6%; 
+}
+.btn4 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3);
+    margin-bottom: min(0.4vh, 3px);
+    margin-right: min(0.4vh, 3px);
+    border-radius: 0 9% 9% 0 / 0 14.6% 14.6% 0; 
+}
+.btn5 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3);
+    margin-bottom: min(0.4vh, 3px);
+    margin-right: min(0.4vh, 3px);
+    border-radius: 9% 9% 9% 9% / 14.6% 14.6% 14.6% 14.6%; 
+}
+.btn6 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3);
+    margin-bottom: min(0.4vh, 3px);
+    border-radius: 9% 0 0 9% / 14.6% 0 0 14.6%; 
+}
+.btn7 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3);
+    margin-right: min(0.4vh, 3px);
+    border-radius: 0 9% 0 0 / 0 14.6% 0 0;    
+}
+.btn8 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3);
+    margin-right: min(0.4vh, 3px); 
+    border-radius: 9% 9% 0 0 / 14.6% 14.6% 0 0; 
+}
+.btn9 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: calc(100% / 3 - min(0.4vh, 3px) / 3 * 2);
+    height: calc(100% / 4 - min(0.4vh, 3px) / 4 * 3); 
+    border-radius: 9% 0 0 0 / 14.6% 0 0 0; 
+}
+.pad1 {
+    position:relative;
+    top:-3%;
+    font-size: min(6.6vh, 40px);
+    font-weight: 700;     
+}
+.pad2 {
+    font-size: min(6.6vh, 40px);
+    font-weight: 700;     
+}
+.pad3 {
+    position:relative;
+    top: 3%;
+    font-size: min(6.6vh, 40px);
+    font-weight: 700;     
 }
 
 .m1-1 {background-color: #f8edd7;}
@@ -97,8 +206,26 @@ body {
 .m7-1 {background-color: #f2e3c7;}
 .m7-2 {background-color: #e1e1e1;}
 .m7-3 {background-color: #222222;}
+.m8-1 {background-color: #f8edd7;}
+.m8-2 {background-color: #eaeaea;}
+.m8-3 {background-color: #161616;}
+.m9-1 {color: #b6a78e;}
+.m9-2 {color: #464646;}
+.m9-3 {color: #8c8c8c;}
 
 #i3:hover {cursor: pointer;}
+#i8:hover {cursor: pointer;}
+#i9:hover {cursor: pointer;}
+#i10:hover {cursor: pointer;}
+#i11:hover {cursor: pointer;}
+#i12:hover {cursor: pointer;}
+#i13:hover {cursor: pointer;}
+#i14:hover {cursor: pointer;}
+#i15:hover {cursor: pointer;}
+#i16:hover {cursor: pointer;}
+#i17:hover {cursor: pointer;}
+#i18:hover {cursor: pointer;}
+#i19:hover {cursor: pointer;}
 
 /*
 */

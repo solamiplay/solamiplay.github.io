@@ -6,9 +6,17 @@ function jumpP(x) {
 }
 function switchMode(from,to) {
     let n = 1
-    while (n <= 7) {
-        document.getElementById('i'+n).classList.remove('m'+n+'-'+from)
-        document.getElementById('i'+n).classList.add('m'+n+'-'+to)
+    while (n <= 30) {
+        if (n >= 8 && n <= 19) {
+            document.getElementById('i'+n).classList.remove('m8-'+from)
+            document.getElementById('i'+n).classList.add('m8-'+to)
+        } else if (n >= 20 && n <= 30) {
+            document.getElementById('i'+n).classList.remove('m9-'+from)
+            document.getElementById('i'+n).classList.add('m9-'+to)         
+        } else {
+            document.getElementById('i'+n).classList.remove('m'+n+'-'+from)
+            document.getElementById('i'+n).classList.add('m'+n+'-'+to)  
+        }
         n++
     }   
 }
