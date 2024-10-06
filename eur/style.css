@@ -184,6 +184,23 @@ body {
     font-size: min(6.6vh, 40px);
     font-weight: 700;     
 }
+.bspace {
+    width: 26.1%;
+    height: 31.4%;
+    margin-top: 6%;
+    mask: url("https://solamiplay.github.io/eur/img/backspace.svg");
+    mask-size: 99%;
+    mask-repeat: no-repeat;  
+}
+.footer {
+    width: 94%;
+    height: 12%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    border-radius: 10.6% / 50%; 
+    margin: 5.4% 3% 0 3%;
+}
 
 .m1-1 {background-color: #f8edd7;}
 .m1-2 {background-color: #eaeaea;}
@@ -212,6 +229,12 @@ body {
 .m9-1 {color: #b6a78e;}
 .m9-2 {color: #464646;}
 .m9-3 {color: #8c8c8c;}
+.m31-1 {background-color: #b6a78e;}
+.m31-2 {background-color: #464646;}
+.m31-3 {background-color: #8c8c8c;}
+.m32-1 {background-color: #f2e3c7;}
+.m32-2 {box-sizing: border-box;background-color: #eeeeee;border:1px solid #f3f3f3;box-shadow: 0 1px 3.5px -1px #afafaf;}
+.m32-3 {background-color: #50dfaa;}
 
 #i3:hover {cursor: pointer;}
 #i8:hover {cursor: pointer;}
@@ -226,6 +249,7 @@ body {
 #i17:hover {cursor: pointer;}
 #i18:hover {cursor: pointer;}
 #i19:hover {cursor: pointer;}
+#i32:hover {cursor: pointer;}
 
 /*
 */
