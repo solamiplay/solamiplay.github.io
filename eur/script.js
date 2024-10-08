@@ -6,7 +6,7 @@ function jumpP(x) {
 }
 function switchMode(from,to) {
     let n = 1
-    while (n <= 32) {
+    while (n <= 33) {
         if (n >= 8 && n <= 19) {
             document.getElementById('i'+n).classList.remove('m8-'+from)
             document.getElementById('i'+n).classList.add('m8-'+to)
