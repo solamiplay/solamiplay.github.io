@@ -204,10 +204,9 @@ body {
 .qr-btn {
     width: 8.87%;
     height: 44.44%;
-    /*margin-bottom: 0.5%;
-    mask: url("https://solamiplay.github.io/eur/img/netzgeld.svg");
+    mask: url("https://solamiplay.github.io/eur/img/qrcode.svg");
     mask-size: 99%;
-    mask-repeat: no-repeat;*/  
+    mask-repeat: no-repeat; 
 }
 
 .m1-1 {background-color: #f8edd7;}
