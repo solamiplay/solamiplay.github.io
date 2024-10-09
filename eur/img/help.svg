@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="27.571531"
+   height="27.563984"
+   viewBox="0 0 7.2949675 7.2929707"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-0.30419177,-0.3065671)">
+    <path
+       style="color:#000000;fill:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;-inkscape-stroke:none"
+       d="m 3.9506758,0.3065671 c -2.010484,2.48e-4 -3.64654603,1.636 -3.64648403,3.646484 -6.2e-5,2.010485 1.63600003,3.646237 3.64648403,3.646485 a 0.30003001,0.30003001 0 0 0 0.002,0 c 0.575115,-0.0027 1.12864,-0.179142 1.638671,-0.441407 l 0.988282,0.212891 c 0.461426,0.09883 0.899354,-0.303359 0.839843,-0.771484 l -0.154296,-1.203125 c 0.199408,-0.456813 0.332693,-0.943923 0.333984,-1.44336 6.2e-5,-2.010702 -1.637735,-3.646546 -3.648438,-3.646484 z m 0,0.599609 c 1.686426,-5.2e-5 3.046927,1.360449 3.046875,3.046875 -0.0012,0.456783 -0.103868,0.907137 -0.302734,1.31836 a 0.30003001,0.30003001 0 0 0 -0.02734,0.167968 l 0.15625,1.236329 c 0.0097,0.07615 -0.04212,0.1235 -0.117187,0.107421 l -1.039063,-0.222656 a 0.30003001,0.30003001 0 0 0 -0.21289,0.0332 c -0.458115,0.263615 -0.975365,0.403776 -1.503907,0.40625 -1.68624,-2.08e-4 -3.04692703,-1.360634 -3.04687503,-3.046875 -5.1e-5,-1.68624 1.36063503,-3.046667 3.04687503,-3.046875 z"
+       id="path6" />
+    <circle
+       style="fill:#000000;stroke-width:1.01539;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0"
+       id="path10"
+       cx="2.4301531"
+       cy="3.9665668"
+       r="0.58208334" />
+    <circle
+       style="fill:#000000;stroke-width:1.01539;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0"
+       id="path10-3"
+       cx="3.951508"
+       cy="3.9665668"
+       r="0.58208334" />
+    <circle
+       style="fill:#000000;stroke-width:1.01539;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0"
+       id="path10-3-2"
+       cx="5.4728627"
+       cy="3.9665668"
+       r="0.58208334" />
+  </g>
+</svg>
