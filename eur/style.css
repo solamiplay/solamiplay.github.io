@@ -38,7 +38,6 @@ body {
     justify-content: center;
     align-items: center;  
     border-radius: 0 0 3% 3% / 0 0 12% 12%; 
-    margin: 1px 3% 0 3%;
 }
 .logo {
     width: 20.6%;
@@ -212,9 +211,9 @@ body {
 .m1-1 {background-color: #f8edd7;}
 .m1-2 {background-color: #eaeaea;}
 .m1-3 {background-color: #161616;}
-.m2-1 {background-color: white;}
-.m2-2 {box-sizing: border-box;background-color: #eeeeee;border:1px solid #f3f3f3;box-shadow: 0 1px 3.5px -1px #afafaf;}
-.m2-3 {background-color: #161616;}
+.m2-1 {background-color: white;margin: 1px 3% 0 3%;}
+.m2-2 {box-sizing: border-box;background-color: #eeeeee;border:1px solid #f3f3f3;box-shadow: 0 1px 3.5px -1px #afafaf;margin: 1px 3% 0 3%;}
+.m2-3 {background-color: #161616;margin: 1px 3% 0 3%;}
 .m3-1 {background-color: #f94958;}
 .m3-2 {background-color: #3c3c3c;}
 .m3-3 {background-color: #ec5f9e;}
@@ -245,6 +244,9 @@ body {
 .m33-1 {background-color: #c8a973;}
 .m33-2 {background-color: #303030;}
 .m33-3 {background-color: #092c1f;}
+.m34-1 {background-color: white;margin: 0 3% 0 3%;}
+.m34-2 {box-sizing: border-box;background-color: #eeeeee;border:1px solid #f3f3f3;box-shadow: 0 1px 3.5px -1px #afafaf;margin: 0 3% 0 3%;}
+.m34-3 {background-color: #161616;margin: 0 3% 0 3%;}
 
 #i3:hover {cursor: pointer;}
 #i8:hover {cursor: pointer;}
@@ -260,6 +262,7 @@ body {
 #i18:hover {cursor: pointer;}
 #i19:hover {cursor: pointer;}
 #i32:hover {cursor: pointer;}
+#i35:hover {cursor: pointer;}
 
 /*
 */

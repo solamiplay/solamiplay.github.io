@@ -1,4 +1,5 @@
 const check = document.querySelector('body')
+const ttl = 35
 var amount = '0'
 
 //
@@ -22,13 +23,16 @@ function updateN(x) {
 }
 function switchMode(from,to) {
     let n = 1
-    while (n <= 33) {
+    while (n <= ttl) {
         if (n >= 8 && n <= 19) {
             document.getElementById('i'+n).classList.remove('m8-'+from)
             document.getElementById('i'+n).classList.add('m8-'+to)
         } else if (n >= 20 && n <= 30) {
             document.getElementById('i'+n).classList.remove('m9-'+from)
-            document.getElementById('i'+n).classList.add('m9-'+to)         
+            document.getElementById('i'+n).classList.add('m9-'+to) 
+        } else if (n === 35) {
+            document.getElementById('i'+n).classList.remove('m3-'+from)
+            document.getElementById('i'+n).classList.add('m3-'+to)                  
         } else {
             document.getElementById('i'+n).classList.remove('m'+n+'-'+from)
             document.getElementById('i'+n).classList.add('m'+n+'-'+to)  
@@ -37,7 +41,7 @@ function switchMode(from,to) {
     }   
 }
 var clk = function() {
-    if (this.id === 'i3') {
+    if (this.id === 'i3' || this.id === 'i35') {
         if (check.classList.contains('m1-1')) {
             switchMode(1,2)
             localStorage.setItem('Mode','2')
@@ -94,6 +98,7 @@ document.getElementById('i17').onclick = clk
 document.getElementById('i18').onclick = clk
 document.getElementById('i19').onclick = clk
 document.getElementById('i32').onclick = clk
+document.getElementById('i35').onclick = clk
 document.addEventListener('DOMContentLoaded', (event) => {
   if (localStorage.getItem('Mode') === '2') {
     switchMode(1,2)
