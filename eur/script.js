@@ -1,5 +1,5 @@
 const check = document.querySelector('body')
-const ttl = 35
+const ttl = 40
 var amount = '0'
 
 //
@@ -32,7 +32,13 @@ function switchMode(from,to) {
             document.getElementById('i'+n).classList.add('m9-'+to) 
         } else if (n === 35) {
             document.getElementById('i'+n).classList.remove('m3-'+from)
-            document.getElementById('i'+n).classList.add('m3-'+to)                  
+            document.getElementById('i'+n).classList.add('m3-'+to) 
+        } else if (n === 32 || n === 36) {
+            document.getElementById('i'+n).classList.remove('m32-'+from)
+            document.getElementById('i'+n).classList.add('m32-'+to)  
+        } else if (n === 33 || n === 37 || n === 38 || n === 39 || n === 40) {
+            document.getElementById('i'+n).classList.remove('m33-'+from)
+            document.getElementById('i'+n).classList.add('m33-'+to)                                          
         } else {
             document.getElementById('i'+n).classList.remove('m'+n+'-'+from)
             document.getElementById('i'+n).classList.add('m'+n+'-'+to)  
@@ -81,6 +87,17 @@ var clk = function() {
     if (this.id === 'i32' && parseFloat(amount)>0) {    
         jumpP('-100%')
     }
+    if (this.id === 'g1') {
+        window.open('https://solscan.io/account/NZdwGgS1bs1CVEqBXvpG4A8wZd3dYUUesTnSsZ6XdGD#balanceChanges', '_blank').focus()
+    }  
+    if (this.id === 'g3') {
+        window.open('sms:+491607822978?&body=Hilfe%2C+bitte%21', '_blank').focus()
+    }        
+    if (this.id === 'g4') {
+        amount = '0'  
+        updateN(amount)  
+        jumpP('0')
+    }
 }
 
 //
@@ -99,6 +116,11 @@ document.getElementById('i18').onclick = clk
 document.getElementById('i19').onclick = clk
 document.getElementById('i32').onclick = clk
 document.getElementById('i35').onclick = clk
+document.getElementById('g1').onclick = clk
+document.getElementById('g2').onclick = clk
+document.getElementById('g3').onclick = clk
+document.getElementById('g4').onclick = clk
+
 document.addEventListener('DOMContentLoaded', (event) => {
   if (localStorage.getItem('Mode') === '2') {
     switchMode(1,2)

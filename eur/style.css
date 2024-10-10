@@ -198,7 +198,12 @@ body {
     justify-content: center;
     align-items: center;  
     border-radius: 10.6% / 50%; 
+}
+.f1 {
     margin: 5.4% 3% 0 3%;
+}
+.f2 {
+    margin: 8.5% 3% 0 3%;
 }
 .qr-btn {
     width: 8.87%;
@@ -206,6 +211,55 @@ body {
     mask: url("https://solamiplay.github.io/eur/img/qrcode.svg");
     mask-size: 99%;
     mask-repeat: no-repeat; 
+}
+#scan {
+    width: 94%;
+    height: 60.1%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background-color: white;
+    border-radius: 1.55%; 
+    margin: 8% 3% 0 3%;    
+}
+.btn10 {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 15.5%;
+    height: 77.77%;  
+}
+.b1 {
+    margin-left: 8%;
+}
+.cfirm {
+    width: 57.1%;
+    height: 57.1%;
+    mask: url("https://solamiplay.github.io/eur/img/confirmation.svg");
+    mask-size: 99%;
+    mask-repeat: no-repeat; 
+}
+.dload {
+    width: 57.1%;
+    height: 57.1%;
+    mask: url("https://solamiplay.github.io/eur/img/download.svg");
+    mask-size: 99%;
+    mask-repeat: no-repeat; 
+}
+.help {
+    width: 57.1%;
+    height: 57.1%;
+    mask: url("https://solamiplay.github.io/eur/img/help.svg");
+    mask-size: 99%;
+    mask-repeat: no-repeat; 
+}
+.exit {
+    width: 57.1%;
+    height: 57.1%;
+    mask: url("https://solamiplay.github.io/eur/img/exit.svg");
+    mask-size: 99%;
+    mask-repeat: no-repeat;  
 }
 
 .m1-1 {background-color: #f8edd7;}
@@ -263,6 +317,10 @@ body {
 #i19:hover {cursor: pointer;}
 #i32:hover {cursor: pointer;}
 #i35:hover {cursor: pointer;}
+#g1:hover {cursor: pointer;}
+#g2:hover {cursor: pointer;}
+#g3:hover {cursor: pointer;}
+#g4:hover {cursor: pointer;}
 
 /*
 */
