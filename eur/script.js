@@ -1,6 +1,9 @@
 const check = document.querySelector('body')
 const ttl = 40
 var amount = '0'
+var tx = '0'
+const qrCode = new QRCodeStyling() 
+qrCode.append(document.getElementById('code'))
 
 //
 function jumpP(x) {
@@ -60,36 +63,123 @@ var clk = function() {
         }  
     }
     if (this.id==='i8' || this.id==='i9' || this.id==='i10' || this.id==='i11' || this.id==='i12' || this.id==='i13' || this.id==='i14' || this.id==='i15' || this.id==='i16'|| this.id==='i17' || this.id==='i18' || this.id==='i19') {
-        let c = this.getAttribute("data-input")
-        if ( !amount.includes(".") && amount.length<4 && c!="d" && c!="." ) {    
-            if ( amount==="0" ) {
+        let c = this.getAttribute('data-input')
+        if ( !amount.includes('.') && amount.length<4 && c!='d' && c!='.' ) {    
+            if ( amount==='0' ) {
                 amount = c
             } else {
                 amount += c
             }
-        } else if ( c==="." && !amount.includes(".") ) {
-            if (amount==="0") {
-                amount = "0."
+        } else if ( c==='.' && !amount.includes('.') ) {
+            if (amount==='0') {
+                amount = '0.'
             } else {    
                 amount += c
             }
-        } else if ( amount.includes(".") && amount.split(".").pop().length<=1 && c!="d" && c!="." ) {
+        } else if ( amount.includes('.') && amount.split('.').pop().length<=1 && c!='d' && c!='.' ) {
             amount += c
-        } else if ( c==="d" ) {
+        } else if ( c==='d' ) {
             if (amount.length===1) {
-                amount = "0"
+                amount = '0'
             } else {    
                 amount = amount.slice(0, -1)
             }
         } 
         updateN(amount)
     }        
-    if (this.id === 'i32' && parseFloat(amount)>0) {    
+    if (this.id === 'i32' && parseFloat(amount)>0) {  
+        tx = 'solana:NZdwGgS1bs1CVEqBXvpG4A8wZd3dYUUesTnSsZ6XdGD?amount=' + amount + '&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr'
+        qrCode.update({ 
+            'width':396,
+            'height':396,
+            'data':tx,
+            'margin':0,
+            'qrOptions':{
+                'typeNumber':'0',
+                'mode':'Byte',
+                'errorCorrectionLevel':'Q'
+            },
+            'imageOptions':{
+                'hideBackgroundDots':false,
+                'imageSize':0.4,'margin':0
+            },
+            'dotsOptions':{
+                'type':'extra-rounded',
+                'color':'#000000'
+            },
+            'backgroundOptions':{
+                'color':'#ffffff'
+            },
+            'image':null,
+            'dotsOptionsHelper':{
+                'colorType':{
+                    'single':true,
+                    'gradient':false
+                },
+                'gradient':{
+                    'linear':true,
+                    'radial':false,
+                    'color1':'#6a1a4c',
+                    'color2':'#6a1a4c',
+                    'rotation':'0'
+                }
+            },
+            'cornersSquareOptions':{
+                'type':'extra-rounded',
+                'color':'#000000'
+            },
+            'cornersSquareOptionsHelper':{
+                'colorType':{
+                    'single':true,
+                    'gradient':false
+                },
+                'gradient':{
+                    'linear':true,
+                    'radial':false,
+                    'color1':'#000000',
+                    'color2':'#000000',
+                    'rotation':'0'
+                }
+            },
+            'cornersDotOptions':{
+                'type':'',
+                'color':'#000000'
+            },
+            'cornersDotOptionsHelper':{
+                'colorType':{
+                    'single':true,
+                    'gradient':false
+                },
+                'gradient':{
+                    'linear':true,
+                    'radial':false,
+                    'color1':'#000000',
+                    'color2':'#000000',
+                    'rotation':'0'
+                }
+            },
+            'backgroundOptionsHelper':{
+                'colorType':{
+                    'single':true,
+                    'gradient':false
+                },
+                'gradient':{
+                    'linear':true,
+                    'radial':false,
+                    'color1':'#ffffff',
+                    'color2':'#ffffff',
+                    'rotation':'0'
+                }
+            }           
+        })      
         jumpP('-100%')
     }
     if (this.id === 'g1') {
         window.open('https://solscan.io/account/NZdwGgS1bs1CVEqBXvpG4A8wZd3dYUUesTnSsZ6XdGD#balanceChanges', '_blank').focus()
-    }  
+    }
+    if (this.id === 'g2') {
+        qrCode.download({ name: 'payment', extension: 'png' })
+    } 
     if (this.id === 'g3') {
         window.open('sms:+491607822978?&body=Hilfe%2C+bitte%21', '_blank').focus()
     }        
