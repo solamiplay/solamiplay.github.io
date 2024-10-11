@@ -181,7 +181,7 @@ var clk = function() {
         qrCode.download({ name: 'payment', extension: 'png' })
     } 
     if (this.id === 'g3') {
-        window.open('sms:+491607822978?&body=Hilfe%2C+bitte%21', '_blank').focus()
+        window.open('sms:+491607822978?&body=Hilfe%2C%20bitte%21', '_blank').focus()
     }        
     if (this.id === 'g4') {
         amount = '0'  
