@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>gen</title>
+<style>
+body {margin: 0;padding: 0;overflow: hidden;}
+#div {position: absolute;top: calc(50% - 256px);left: calc(50% - 256px);width: 512px;height: 512px;} 
+#div:hover {cursor: pointer;}
+</style>
+<script type="text/javascript" src="lib.js"></script>
+</head>
+<body>
+<div id="div"></div>
+<script type="text/javascript">
+var x = ''
+const qrCode = new QRCodeStyling({
+        "width":512,
+        "height":512,
+        "data":x,
+        "margin":0,
+        "qrOptions":{
+            "typeNumber":"0",
+            "mode":"Byte",
+            "errorCorrectionLevel":"Q"
+        },
+        "imageOptions":{
+            "hideBackgroundDots":false,
+            "imageSize":0.4,"margin":0
+        },
+        "dotsOptions":{
+            "type":"extra-rounded",
+            "color":"#000000"
+        },
+        "backgroundOptions":{
+            "color":"#ffffff"
+        },
+        "image":null,
+        "dotsOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#6a1a4c",
+                "color2":"#6a1a4c",
+                "rotation":"0"
+            }
+        },
+        "cornersSquareOptions":{
+            "type":"extra-rounded",
+            "color":"#000000"
+        },
+        "cornersSquareOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#000000",
+                "color2":"#000000",
+                "rotation":"0"
+            }
+        },
+        "cornersDotOptions":{
+            "type":"",
+            "color":"#000000"
+        },
+        "cornersDotOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#000000",
+                "color2":"#000000",
+                "rotation":"0"
+            }
+        },
+        "backgroundOptionsHelper":{
+            "colorType":{
+                "single":true,
+                "gradient":false
+            },
+            "gradient":{
+                "linear":true,
+                "radial":false,
+                "color1":"#ffffff",
+                "color2":"#ffffff",
+                "rotation":"0"
+            }
+        }});      
+qrCode.append(document.getElementById('div'))
+document.getElementById('div').addEventListener('click', function(){
+    qrCode.download({ name: 'tmp', extension: 'svg' }) 
+}, false);
+</script>
+</body>
+</html>
