@@ -12,9 +12,9 @@ body {
     font-variation-settings: "wdth" 100;    
 }
 #stage {
-    --r: 480 / 750;
+    --r: 480 / 750; 
     aspect-ratio: var(--r);
-    width:min(100%, min(480px, 100vh*(var(--r))));
+    width:min(100%, min(480px, 100vh*(var(--r)))); 
 }
 #content {
     width: 100%;
@@ -53,17 +53,18 @@ body {
     width: 90.833%;
     height: 50.667%;   
     display: flex;
+    container-type: size;
     margin-top: 4.75%;
     margin-left: 4.583%;    
     background-color: rgba(0, 0, 0, 0.1);
 }
 .r500 {
-  margin-top: min(1.333vh, 10px);
-  margin-left: -0.462%;
-  font-weight: 500;
-  font-size: min(4.933vh, 37px);
-  line-height: min(5.933vh, 44.5px);
-  color: rgba(0, 0, 0, 0.9);
+    margin-top: min(1.333vh, 10px);
+    margin-left: -0.462%;
+    font-weight: 500;
+    font-size: 9.737cqh;
+    line-height: 11.579cqh;
+    color: rgba(0, 0, 0, 0.9);
 }
 #footer1 {
     width: 7.916%;
@@ -71,8 +72,7 @@ body {
     display: flex;
     float: left;
     margin-top: 2.1%;
-    margin-left: 4.375%;
-    background-color: rgba(0, 0, 0, 0.1);    
+    margin-left: 4.375%;   
 }
 #footer1:hover {
     cursor: pointer;
@@ -90,15 +90,16 @@ body {
     height: 4.667%;   
     display: flex;
     float: left;
+    container-type: size;
     margin-top: 2.1%;
-    background-color: rgba(0, 0, 0, 0.2);    
+    background-color: rgba(0, 0, 0, 0.2);   
 }
 .r700 {
     margin-top: min(0.667vh, 5px);
     margin-left: 6.923%;
     font-weight: 700;
-    font-size: min(3.733vh, 28px);
-    line-height: min(3.733vh, 28px);
+    font-size: 80cqh;
+    line-height: 80cqh;
     color: rgba(0, 0, 0, 0.9);
 }
 
