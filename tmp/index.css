@@ -54,7 +54,8 @@ body {
     height: 50.667%;   
     display: flex;
     margin-top: 4.75%;
-    margin-left: 4.583%;
+    margin-left: 4.583%;    
+    background-color: rgba(0, 0, 0, 0.1);
 }
 .r500 {
   margin-top: min(1.333vh, 10px);
@@ -71,6 +72,7 @@ body {
     float: left;
     margin-top: 2.1%;
     margin-left: 4.375%;
+    background-color: rgba(0, 0, 0, 0.1);    
 }
 #footer1:hover {
     cursor: pointer;
@@ -89,6 +91,7 @@ body {
     display: flex;
     float: left;
     margin-top: 2.1%;
+    background-color: rgba(0, 0, 0, 0.2);    
 }
 .r700 {
     margin-top: min(0.667vh, 5px);
