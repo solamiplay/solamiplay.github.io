@@ -14,7 +14,7 @@ body {
 #stage {
     --r: 480 / 750;
     aspect-ratio: var(--r);
-    width:min(100%, min(480px, 100vh*(var(--r))));
+    width:min(100%, min(480px, 100vh*(var(--r)), 100vw));
 }
 #content {
     width: 100%;
@@ -73,7 +73,7 @@ body {
     float: left;
     margin-top: 2.1%;
     margin-left: 4.375%;
-    background-color: rgba(0, 0, 0, 0.1);    
+    /*background-color: rgba(0, 0, 0, 0.1);*/    
 }
 #footer1:hover {
     cursor: pointer;
@@ -104,4 +104,5 @@ body {
 }
 
 /*
+    width:min(100%, min(480px, 100vh*(var(--r))));
 */
