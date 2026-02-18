@@ -56,7 +56,6 @@ body {
     container-type: size;
     margin-top: 4.75%;
     margin-left: 4.583%;    
-    background-color: rgba(0, 0, 0, 0.1);
 }
 .r500 {
     margin-top: min(1.333vh, 10px);
@@ -91,8 +90,7 @@ body {
     display: flex;
     float: left;
     container-type: size;
-    margin-top: 2.1%;
-    background-color: rgba(0, 0, 0, 0.2);   
+    margin-top: 2.1%; 
 }
 .r700 {
     margin-top: min(0.667vh, 5px);
