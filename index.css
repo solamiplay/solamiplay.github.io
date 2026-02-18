@@ -1,0 +1,106 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background: #ddf8c5;
+    background: linear-gradient(0deg, rgba(144, 246, 225, 1) 0%, rgba(221, 248, 197, 1) 100%);
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;    
+}
+#stage {
+    --r: 480 / 750;
+    aspect-ratio: var(--r);
+    width:min(100%, min(480px, 100vh*(var(--r))));
+}
+#content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    overflow: hidden;   
+}
+#header {
+    width: 43.75%;
+    height: 5.6%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+    margin-top: 20%;
+    margin-left: 4.583%;
+}
+.logo {
+    width: 100%;
+    height: 100%;  
+    background-image: url("logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: opacity(90%);
+}
+.line {
+    width: 91.667%;
+    height: 0.667%;   
+    display: flex;
+    margin-top: 3.542%;
+    margin-left: 4.167%;
+    border-radius: 0.568% 0.568% 0.568% 0.568% / 50% 50% 50% 50%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+#text {
+    width: 90.833%;
+    height: 50.667%;   
+    display: flex;
+    margin-top: 4.75%;
+    margin-left: 4.583%;    
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.r500 {
+  margin-top: min(1.333vh, 10px);
+  margin-left: -0.462%;
+  font-weight: 500;
+  font-size: min(4.933vh, 37px);
+  line-height: min(5.933vh, 44.5px);
+  color: rgba(0, 0, 0, 0.9);
+}
+#footer1 {
+    width: 7.916%;
+    height: 4.667%;   
+    display: flex;
+    float: left;
+    margin-top: 2.1%;
+    margin-left: 4.375%;
+    background-color: rgba(0, 0, 0, 0.1);    
+}
+#footer1:hover {
+    cursor: pointer;
+}
+.email {
+    width: 100%;
+    height: 100%;  
+    background-image: url("email.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: opacity(90%);
+}
+#footer2 {
+    width: 27.083%;
+    height: 4.667%;   
+    display: flex;
+    float: left;
+    margin-top: 2.1%;
+    background-color: rgba(0, 0, 0, 0.2);    
+}
+.r700 {
+    margin-top: min(0.667vh, 5px);
+    margin-left: 6.923%;
+    font-weight: 700;
+    font-size: min(3.733vh, 28px);
+    line-height: min(3.733vh, 28px);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/*
+*/
