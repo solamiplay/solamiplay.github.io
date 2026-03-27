@@ -5,9 +5,10 @@ const qrCode = new QRCodeStyling()
 qrCode.append(document.getElementById('code'))
 
 tx = 'solana:Y1TnGGeKo2zCHeWyrmpWMQi2yDv9YaWwJqVCkA8YD1Y?amount=1.00&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr&memo=688212127313874'
-qrCode.update({ 
+/*qrCode.update({ 
     'width':410,
     'height':410,
+    'type': 'svg',
     'data':tx,
     'margin':0,
     'qrOptions':{
@@ -87,5 +88,5 @@ qrCode.update({
             'rotation':'0'
             }
         }           
-    })      
+    })  */    
 jumpP('-200%') 

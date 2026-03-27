@@ -1,8 +1,6 @@
-/*
 * {
   box-sizing: border-box;
 }
-*/ 
 body {
     height: 100vh;
     margin: 0;
@@ -320,7 +318,8 @@ body {
     height: calc(410/452*100%);   
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center; 
+    background-color: rgba( 0, 0, 0, 0.1);   
 }
 .i09 {
     width: 100%;
