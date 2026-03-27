@@ -8,8 +8,8 @@ tx = 'solana:Y1TnGGeKo2zCHeWyrmpWMQi2yDv9YaWwJqVCkA8YD1Y?amount=1.00&spl-token=H
 //tx = 'solana:CA1GTtUkgXsKDVyEHjkVYzg2oDS4jE3RCEJNwEJwXdSH?amount=1.00&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr&label=Netcash&memo=765121816112569'
 
 qrCode.update({ 
-    'width':390,
-    'height':390,
+    'width':396,
+    'height':396,
     'data':tx,
     'margin':0,
     'qrOptions':{

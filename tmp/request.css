@@ -330,8 +330,8 @@ body {
 */
 
 #code {
-    width: calc(390/452*100%);
-    height: calc(390/452*100%);   
+    width: calc(396/452*100%);
+    height: calc(396/452*100%);   
     display: flex;
     justify-content: center;
     align-items: center;     
