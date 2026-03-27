@@ -10,7 +10,6 @@ tx = 'solana:Y1TnGGeKo2zCHeWyrmpWMQi2yDv9YaWwJqVCkA8YD1Y?amount=1.00&spl-token=H
 qrCode.update({ 
     'width':390,
     'height':390,
-    'type':'svg',
     'data':tx,
     'margin':0,
     'qrOptions':{
