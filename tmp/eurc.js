@@ -4,19 +4,19 @@ function jumpP(x) { document.getElementById('pages').style.setProperty('top', x)
 const qrCode = new QRCodeStyling() 
 qrCode.append(document.getElementById('code'))
 
-//tx = 'solana:Y1TnGGeKo2zCHeWyrmpWMQi2yDv9YaWwJqVCkA8YD1Y?amount=1.00&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr&memo=688212127313874'
-tx = 'solana:CA1GTtUkgXsKDVyEHjkVYzg2oDS4jE3RCEJNwEJwXdSH?amount=1.00&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr&label=Netcash&memo=765121816112569'
+tx = 'solana:Y1TnGGeKo2zCHeWyrmpWMQi2yDv9YaWwJqVCkA8YD1Y?amount=1.00&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr&memo=688212127313874'
+//tx = 'solana:CA1GTtUkgXsKDVyEHjkVYzg2oDS4jE3RCEJNwEJwXdSH?amount=1.00&spl-token=HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr&label=Netcash&memo=765121816112569'
 
 qrCode.update({ 
-    'width':380,
-    'height':380,
+    'width':390,
+    'height':390,
     'type':'svg',
     'data':tx,
     'margin':0,
     'qrOptions':{
         'typeNumber':'0',
         'mode':'Byte',
-        'errorCorrectionLevel':'Q'
+        'errorCorrectionLevel':'H'
         },
     'imageOptions':{
         'hideBackgroundDots':false,
@@ -93,3 +93,5 @@ qrCode.update({
         }           
     })     
 jumpP('-200%') 
+
+//https://github.com/oblakstudio/qr-code-styling
